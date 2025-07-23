@@ -1,0 +1,5 @@
+{
+  "appId": "com.medo.todoapp",
+  "appName": "TodoApp",
+  "webDir": "dist"
+}
