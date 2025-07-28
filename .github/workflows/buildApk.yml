@@ -43,6 +43,9 @@ jobs:
                         name: todo.apk
                         path: android/app/build/outputs/apk/debug/app-debug.apk
 
+                -   name: update apk name
+                    run: mv android/app/build/outputs/apk/debug/app-debug.apk android/app/build/outputs/apk/debug/Attendance.apk
+
                 -   name: Upload to GitHub Release
                     uses: softprops/action-gh-release@v2
                     if: github.ref_name == 'master'
