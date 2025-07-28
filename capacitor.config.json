@@ -1,5 +1,8 @@
 {
   "appId": "com.medo.todoapp",
   "appName": "TodoApp",
-  "webDir": "dist"
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
 }

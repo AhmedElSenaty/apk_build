@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Capacitor } from '@capacitor/core';
 
 const api = 'http://192.168.1.7:3000/api/todos';
 
@@ -7,6 +8,10 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [text, setText] = useState('');
 
+    if (Capacitor.getPlatform() === 'android') {
+      console.log('running on android');
+    }
+    
   useEffect(() => {
     axios.get(api).then(res => setTodos(res.data));
   }, []);
@@ -29,7 +34,7 @@ function App() {
 
   return (
     <div>
-      <h1>To-Do App</h1>
+          <h1>To-Do App {Capacitor.getPlatform() === 'android'? 'Android' : 'Web' }</h1>
       <input value={text} onChange={e => setText(e.target.value)} />
       <button onClick={addTodo}>Add</button>
       <ul>
